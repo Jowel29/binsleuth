@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+
+# Analysis output
+*_analysis/
+
+# Never commit live malware. Keep real samples outside the repo, or here.
+malware/
+*.malware
+*.infected
+
+# Benchmark binaries are built locally from tests/benchmark/src, never committed:
+# they are crafted to look like malware and antivirus/GitHub may flag them.
+tests/benchmark/bin/
