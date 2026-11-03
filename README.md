@@ -2,6 +2,10 @@
 
 **A Claude skill that statically triages Windows binaries for malware — and is hardened against the prompt injection that hides inside hostile files.**
 
+![binsleuth analyzing a sample](docs/demo.gif)
+
+<sub>Demo: analyzing benchmark sample 03, whose hidden instruction tries to talk the analyst into a "safe" verdict. Real output; the file name is a stand-in. Reproduce it with the benchmark below.</sub>
+
 Point your AI agent at a suspicious `.exe` or `.dll` and ask *"analyze this file."* binsleuth walks it through a malware analyst's static workflow — imports, sections, packing, signature, strings, indicators — and produces a report where **every conclusion cites its evidence**. It never runs the file.
 
 A reverse-engineering assistant has an unusual problem: the files it reads are written by attackers, and an attacker who expects an AI reader can plant instructions in the file to steer the verdict. binsleuth treats everything inside a sample as untrusted data, detects text aimed at an AI, and turns each attempt into a finding instead of obeying it.
